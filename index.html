@@ -20,7 +20,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/animate.css" rel="stylesheet" />
@@ -62,50 +62,55 @@
 
 	<!-- Section: intro -->
     <section id="intro" class="intro">
-
-	  <div class="container">
-            <div class="row">
-              <div class="col-sm-6 col-md-6" id="intro">
-				<div class="wow fadeInLeft " data-wow-delay="0.2s">
-					<div class="service-box">
-						<div class="service-desc logo">
-							<img src="img/logo_loja.png" alt="" class="img-responsive" />
-				        </div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-6">
-				<h1>PRÓXIMO EVENTO</h1>
-				<div class="wow fadeInUp" data-wow-delay="0.2s">
-				          <div class="service-box">
-							<div class="service-desc" >
-								<!-- <img src="img/info-intro.png" alt="" /> -->
-								<h3 style="text-transform: none;">
-									PyDay en Loja
-									<br>
-									<span style="font-size:0.5em;color:#fff;">
-										charlas, talleres y comunidad
-									</span>
-								</h3>
-								<hr>
-								<h4 style="text-transform: none;">
-									No te lo pierdas!
-									<br>
-									viernes 01 abril de 2016 <br>desde las 9:00 hasta las 18:00
-								</h4>
-								<h3>
-									<span style="font-size:0.5em;color:#fff;">
-									visita la <a href="http://pyday.pythonecuador.org">
-										<strong>web del evento</strong>
-									</a>
-									</span>
-								</h3>
-							</div>
-				          </div>
-
-				</div>
-			</div>
+        <div class="heading-about">
+	    <div class="container">
+	      <div class="row">
+		<div class="col-lg-8 col-lg-offset-4">
+		  <div class="wow bounceInDown" data-wow-delay="0.4s">
+		    <div class="section-heading">
+		      <h2>Eventos Próximos</h2>
+		    </div>
+		  </div>
 		</div>
+	      </div>
+	    </div>
+	  </div>
+
+	<div class="container">
+            <div class="row">
+                
+                <!-- Carrusel -->
+                <div id="accordion">
+                    <h3>#PyDayLoja</h3>
+                    <div>
+                        <p>
+                        <ul>
+                            <li><b>Lugar:</b> Viernes 01 abril de 2016 <br /></li>
+                            <li><b>Horario:</b> 9:00 hasta las 18:00<br /></li>
+                            <li><b>Web:</b> <a href="http://pyday.pythonecuador.org"><strong>http://pyday.pythonecuador.org</strong></a><br /></li>
+                            <li><b>Actividades:</b> charlas, talleres y comunidad <br /></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <h3>#djangogirls - Quito</h3>
+                    <div>
+                        <p>
+                        <ul>
+                            <li><b>Lugar:</b> Viernes 01 abril de 2016 <br /></li>
+                            <li><b>Horario:</b> 9:00 hasta las 18:00<br /></li>
+                            <li><b>Web:</b> <a href="http://pyday.pythonecuador.org"><strong>http://pyday.pythonecuador.org</strong></a><br /></li>
+                            <li><b>Actividades:</b> charlas, talleres y comunidad <br /></li>
+                        </ul>
+                        </p>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+ 
+ 
+            <!-- FinCarrusel -->
+		
 
     </section>
 	<!-- /Section: intro -->
@@ -267,10 +272,29 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/wow.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
+    <script>
+        $(function() {
+    var icons = {
+      header: "ui-icon-circle-arrow-e",
+      activeHeader: "ui-icon-circle-arrow-s"
+    };
+    $( "#accordion" ).accordion({
+      icons: icons
+    });
+    $( "#toggle" ).button().click(function() {
+      if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+        $( "#accordion" ).accordion( "option", "icons", null );
+      } else {
+        $( "#accordion" ).accordion( "option", "icons", icons );
+      }
+    });
+  });
+    </script>
 
 </body>
 
